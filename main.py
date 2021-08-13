@@ -17,4 +17,4 @@ r = requests.get('https://caixadirectaonline.cgd.pt/cdo/private/contasaordem/con
 parsed_html = BeautifulSoup(r.text, features="lxml")
 saldo = parsed_html.body.find('div', attrs={'class':'saldos disponivel'})
 #print(saldo)
-print(saldo.find('p', attrs={'class':'valor'}).label.text)
+print(saldo.find('p', attrs={'class':'valor'}).label.text, "€")
